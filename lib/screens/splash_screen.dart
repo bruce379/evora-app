@@ -70,7 +70,7 @@ class _SplashScreenState extends State<SplashScreen>
               ),
               const SizedBox(height: 20),
               Text(
-                'EVORA',
+                'EVORA HEALTH',
                 style: Theme.of(context).textTheme.displayLarge?.copyWith(
                   letterSpacing: 8,
                   fontSize: 28,

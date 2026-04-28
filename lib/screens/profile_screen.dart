@@ -58,7 +58,7 @@ class ProfileScreen extends StatelessWidget {
                 },
               ),
               const SizedBox(height: 32),
-              Text('Evora Health v1.0.0', style: const TextStyle(color: EvoraColors.textMuted, fontSize: 12)),
+              Text('Evora Health App v1.0.0', style: const TextStyle(color: EvoraColors.textMuted, fontSize: 12)),
             ],
           ),
         ),

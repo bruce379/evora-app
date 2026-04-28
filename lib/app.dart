@@ -14,7 +14,7 @@ class EvoraApp extends ConsumerWidget {
     final router = ref.watch(routerProvider);
 
     return MaterialApp.router(
-      title: 'Evora Health',
+      title: 'Evora Health App',
       debugShowCheckedModeBanner: false,
       theme: EvoraTheme.light,
       routerConfig: router,
