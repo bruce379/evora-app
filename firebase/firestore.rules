@@ -1,0 +1,30 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Users - own document only
+    match /users/{userId} {
+      allow read, write: if request.auth != null && request.auth.uid == userId;
+
+      // Devices sub-collection
+      match /devices/{deviceId} {
+        allow read, write: if request.auth != null && request.auth.uid == userId;
+      }
+    }
+
+    // Health data - own data only
+    match /health_data/{userId}/{collection}/{docId} {
+      allow read, write: if request.auth != null && request.auth.uid == userId;
+    }
+
+    // Admin access (read all users for email sequences)
+    match /users/{userId} {
+      allow read: if request.auth != null && request.auth.token.email in [
+        'admin@evorahealth.co.za',
+        'bruce@theplaygroundza.com',
+        'bruce@gostartr.com'
+      ];
+    }
+
+  }
+}
